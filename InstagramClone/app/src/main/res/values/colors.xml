@@ -7,4 +7,5 @@
     <color name="white">#FFF</color>
     <color name="blackColor">#000</color>
     <color name="DarkGrey">#999999</color>
+    <color name="link_blue">#3385ff</color>
 </resources>

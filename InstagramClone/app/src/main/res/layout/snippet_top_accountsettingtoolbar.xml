@@ -15,25 +15,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <ImageView
+                    android:id="@+id/backArrow"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_backarrow" />
+
                 <TextView
-                    android:id="@+id/profileName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="15dp"
+                    android:layout_toRightOf="@+id/backArrow"
                     android:gravity="center"
-                    android:text="asher.ansari"
+                    android:text="Options"
                     android:textColor="@color/blackColor"
                     android:textSize="20sp" />
 
-                <ImageView
-                    android:id="@+id/profileMenu"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="20dp"
-                    android:src="@drawable/ic_ellipses" />
 
             </RelativeLayout>
         </android.support.v7.widget.Toolbar>

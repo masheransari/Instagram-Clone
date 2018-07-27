@@ -33,6 +33,8 @@ dependencies {
     //Design for toolbar and coordinate layout etc.
     compile 'com.android.support:design:26.+'
 
+    //Circle ImageView Library
+    compile 'de.hdodenhof:circleimageview:2.2.0'
     testCompile 'junit:junit:4.12'
 
 }

@@ -1,12 +1,15 @@
 package com.tech.universal.instagramclone.Profile;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.tech.universal.instagramclone.Helper.BottomNavigationViewHelper;
@@ -21,10 +24,14 @@ public class ProfileActivity extends AppCompatActivity {
     private static final int ACTIVITY_NUM = 4;
     private Context mContext = ProfileActivity.this;
 
+    private ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        progressBar = (ProgressBar) findViewById(R.id.profileProgresBar);
+        progressBar.setVisibility(View.GONE);
         setupBottomNavigationView();
         setUpToolbar();
     }
@@ -32,26 +39,15 @@ public class ProfileActivity extends AppCompatActivity {
     private void setUpToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.profileToolbar);
         setSupportActionBar(toolbar);
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+        ImageView ivSetting = (ImageView) toolbar.findViewById(R.id.profileMenu);
+        ivSetting.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                Log.d(TAG, "onMenuItemClick: Click Menu item :" + item);
-
-                switch (item.getItemId()) {
-                    case R.id.profileMenu:
-                        break;
-
-                }
-                return false;
+            public void onClick(View v) {
+                Intent i = new Intent(mContext, AccountSettingActivity.class);
+                startActivity(i);
             }
         });
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.profile_menu, menu);
-
-        return true;
     }
 
     /**
